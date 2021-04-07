@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.jgcodes.butool.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import io.github.jgcodes.butool.FXMLConstants?>
+<VBox xmlns="http://javafx.com/javafx/11.0.2"
+			xmlns:fx="http://javafx.com/fxml/1"
+			fx:controller="io.github.jgcodes.butool.Controller">
+	<TitledPane collapsible="false" text="Files" VBox.vgrow="ALWAYS">
+		<maxHeight><Double fx:constant="MAX_VALUE"/></maxHeight>
+		<VBox.margin><FXMLConstants fx:constant="BOX_INSETS"/></VBox.margin>
+
+		<GridPane hgap="5" vgap="5">
+			<Label text="Input folder: " GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+			<TextField promptText="Type a file path or click the button on the right" GridPane.columnIndex="1"
+								 GridPane.rowIndex="0" GridPane.fillWidth="true" GridPane.hgrow="ALWAYS" fx:id="iFileField"/>
+			<Button GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="btn-icon" onAction="#browseInput" fx:id="iFileBtn"/>
+
+			<Label text="Output folder: " GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+			<TextField promptText="Type a file path or click the button on the right" GridPane.columnIndex="1"
+								 GridPane.rowIndex="1" GridPane.fillWidth="true" GridPane.hgrow="ALWAYS" fx:id="oFileField"/>
+			<Button GridPane.columnIndex="2" GridPane.rowIndex="1" styleClass="btn-icon" onAction="#browseOutput" fx:id="oFileBtn"/>
+		</GridPane>
+	</TitledPane>
+	<TitledPane collapsible="false" text="Config" VBox.vgrow="ALWAYS">
+		<maxHeight><Double fx:constant="MAX_VALUE"/></maxHeight>
+		<VBox.margin><FXMLConstants fx:constant="BOX_INSETS"/></VBox.margin>
+
+		<GridPane hgap="5" vgap="5">
+			<Label text="Start date: " GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+			<DatePicker promptText="provide a start date (optional)" GridPane.columnIndex="1" GridPane.rowIndex="0"
+									GridPane.fillWidth="true" GridPane.hgrow="ALWAYS" fx:id="startPicker">
+				<maxWidth>
+					<Double fx:constant="MAX_VALUE"/>
+				</maxWidth>
+			</DatePicker>
+
+			<Label text="End date: " GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+			<DatePicker promptText="provide an end date (optional)" GridPane.columnIndex="1" GridPane.rowIndex="1"
+									GridPane.fillWidth="true" GridPane.hgrow="ALWAYS" fx:id="endPicker">
+				<maxWidth>
+					<Double fx:constant="MAX_VALUE"/>
+				</maxWidth>
+			</DatePicker>
+
+			<Label text="Overwrite settings: " GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+			<ComboBox GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="copyBox"/>
+		</GridPane>
+	</TitledPane>
+	<Button text="Go!" onAction="#startWorker">
+		<maxWidth><Double fx:constant="MAX_VALUE"/></maxWidth>
+		<VBox.margin><FXMLConstants fx:constant="BOX_INSETS"/></VBox.margin>
+	</Button>
+</VBox>

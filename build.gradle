@@ -1,0 +1,61 @@
+class DepVersions {
+	public static final String JFX = "16"
+}
+
+plugins {
+	id 'application'
+	id 'org.openjfx.javafxplugin' version '0.0.9'
+	id 'org.beryx.jlink' version '2.23.6'
+}
+
+group 'io.github.jgcodes'
+version '1.0-SNAPSHOT'
+
+repositories {
+	mavenCentral()
+}
+
+java {
+	modularity.inferModulePath = true
+}
+
+application {
+	mainClassName "io.github.jgcodes.butool.Launcher"
+	mainModule.set "io.github.jgcodes.butool"
+}
+
+dependencies {
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.1'
+}
+
+javafx {
+	version '16'
+	modules("javafx.controls", "javafx.fxml")
+}
+
+jlink {
+	launcher {
+		name = "JavaFX Backup Tool"
+		jvmArgs = ['-Djdk.gtk.version=2']
+	}
+	jpackage {
+		appVersion = "1.0"
+		installerType = "exe"
+		installerOptions = [
+			"--description", "Copies files and separates them by month.",
+			"--copyright", "Copyright (c) jgcodes 2021",
+			"--win-shortcut",
+			"--win-dir-chooser",
+			"--win-menu",
+			"--win-upgrade-uuid", "71aa6db2-c75d-451e-a246-8387b84839e5"
+		]
+		icon = "src/build-assets/icon.ico"
+	}
+}
+
+
+
+test {
+	useJUnitPlatform()
+}

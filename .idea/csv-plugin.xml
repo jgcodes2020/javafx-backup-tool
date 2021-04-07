@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CsvFileAttributes">
+    <option name="attributeMap">
+      <map>
+        <entry key="C:\Users\jacky\.gradle\caches\modules-2\files-2.1\org.openjfx\javafx-controls\16\9851c81a573ec4d63d61882c46a9916c3d4dad8a\javafx-controls-16-sources.jar!\javafx\scene\control\Alert.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\src\main\java\io\github\jgcodes\butool\util\CopyWorker.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
